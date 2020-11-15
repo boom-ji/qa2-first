@@ -12,7 +12,7 @@ public class MyFirstTest {
         int sum = sumTwoDigits( 2001, 19);
         System.out.println("Away from: " + sum);
 
-        System.out.println(sumTwoDigits(2000, 21));
+        System.out.println(sumTwoDigits(2020, 1));
         System.out.println(name);
 
 
