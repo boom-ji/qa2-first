@@ -10,10 +10,12 @@ public class MyFirstTest {
         System.out.println("Corona go away!");
 
         int sum = sumTwoDigits( 2001, 19);
-        System.out.println("Away from: " + sum);
+        System.out.println("Away from:" + sum);
 
         System.out.println(sumTwoDigits(2020, 1));
+
         System.out.println(name);
+
 
 
     }
@@ -21,5 +23,6 @@ public class MyFirstTest {
     private int sumTwoDigits(int a, int b) {
         int c = a + b;
         return c;
+
     }
 }

@@ -12,7 +12,6 @@ public class TVNetTests {
     private final By COMMENT_BTN = By.xpath(".//img[@src = '/v5/img/icons/comment-v2.svg']");
 
 
-
     @Test
     public void firstTVNetTest() {
 
@@ -24,11 +23,14 @@ public class TVNetTests {
         WebElement acceptBtn = driver.findElement(ACCEPT_TvNET_COOKIES_BTN);
         acceptBtn.click();
 
+
+
         WebElement acceptLnk = driver.findElement(FIND_ANY_ARTICLE_LINK);
         acceptLnk.click();
 
         WebElement acceptCmnt = driver.findElement(COMMENT_BTN);
         acceptCmnt.click();
+
 
 
     }
