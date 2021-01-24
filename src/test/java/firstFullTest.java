@@ -1,3 +1,5 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -16,19 +18,25 @@ public class firstFullTest {
     private final By ARTICLE_PAGE_TITLE = By.xpath(".//h1[@itemprop = 'headline name']");
 //    private final By ARTICLE_COMMENT_COUNT = By.xpath("");
 
+    private final Logger LOGGER = LogManager.getLogger(firstFullTest.class);
+
+
     @Test
     public void titleCommentsCheck(){
+        LOGGER.info("This test is checking titles and comments on TVNET page");
         System.setProperty("webdriver.chrome.driver", "/Users/lena/Downloads/chromedriver");
+        LOGGER.info("we are opening browser window");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://tvnet.lv");
 
         //--the 1st step of automatization is test plan--
 
-        //Find article
+        LOGGER.info("Tracking 7th article");
         WebElement currentArticle = driver.findElements(ARTICLE).get(7);
 
         //Store title (prisvaivaetsja element find element+zapominaet)nazvanie
+        LOGGER.info("FIndind and store article title");
         String titleToCheck = currentArticle.findElement(ARTICLE_TITLE).getText();
 
         //store comments count (for checking the name of article)
@@ -51,8 +59,7 @@ public class firstFullTest {
 
         //check title(article)
         Assertions.assertEquals(titleToCheck, driver.findElement(ARTICLE_PAGE_TITLE).getText(), "Incorrect Title!");
-
-        //check comments
+//        Assertions.assertTrue(titleToCheck.startsWith(currentArticle), "Write ng title on artocle"); //check comments
 //        Assertions.assertEquals(commentCount, driver.findElement(COMMENTS_COUNT).getSize(), "wrong comments");
 
         //click on comments
