@@ -4,6 +4,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import model.Weather;
+
+import java.util.List;
 
 public class WeatherStepDefs {
     @Given("city id: {int}")
@@ -23,9 +26,123 @@ public class WeatherStepDefs {
     public void check_lat(double lat) {
 
     }
+    @And("weather id is {int}")
+    public void check_id(int id) {
+
+    }
+    @And("weather main is {String}")
+    public void check_weather_main(String main) {
+
+    }
+    @And("description is {String}")
+    public void check_despription(String description) {
+
+    }
+    @And("icon is {String}")
+    public void check_icon(String icon) {
+
+    }
+    @And("base is {String}")
+    public void check_base(String main) {
+
+    }
     @And("temp is {double}")
     public void check_temp(double temp) {
 
     }
+    @And("humidity is {int}")
+    public void check_humidity(int humidity) {
+
+    }
+
+    @And("pressure is {int}")
+    public void check_pressure(int pressure) {
+
+    }
+
+    @And("temp_min is {double}")
+    public void check_temp_min(double temp_min) {
+
+    }
+    @And("temp_max is {double}")
+    public void check_temp_max(double temp_max) {
+
+    }
+
+    @And("visibility is {int}")
+    public void check_visibility(int visibility) {
+
+    }
+    @And("speed is {double}")
+    public void check_speed(double speed) {
+
+    }
+    @And("deg is {int}")
+    public void check_deg(int deg) {
+
+    }
+    @And("all is {int}")
+    public void check_all(int all) {
+
+    }
+    @And("dt is {int}")
+    public void check_dt(int dt) {
+
+    }
+
+    @And("type is {int}")
+    public void check_type(int type) {
+
+    }
+
+    @And("sys id is {int}")
+    public void check_sys_id(int id) {
+
+    }
+    @And("message is {double}")
+    public void check_message(double message) {
+
+    }
+    @And("country is {String}")
+    public void check_country(int country) {
+
+    }
+    @And("sunrise is {int}")
+    public void check_sunrise(int sunrise) {
+
+    }
+    @And("sunset is {int}")
+    public void check_sunset(int sunset) {
+
+    }
+    @And("town id is {int}")
+    public void check_town_id(int id) {
+
+    }
+
+    @And("name is {String}")
+    public void check_name(String name) {
+
+    }
+    @And("cod is {int}")
+    public void check_cod(int cod) {
+
+    }
+
+
+
+
+
+    //   @And("weather main is {List<Weather>}")
+ //   public void check_main(List<Weather> main) {
+
+//    }
+
+
+//    @And("temp is {double}")
+ //   public void check_temp(double temp) {
+
+ //   }
+
 
 }
