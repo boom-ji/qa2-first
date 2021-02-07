@@ -1,51 +1,71 @@
 package StepDefs;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import model.Weather;
+import model.WeatherResponse;
+import org.junit.jupiter.api.Assertions;
+import requesters.WeatherRequester;
 
 import java.util.List;
+import java.util.Map;
 
 public class WeatherStepDefs {
+    private int cityId;
+    private WeatherResponse response;
+
     @Given("city id: {int}")
     public void set_city_id(int cityId){
+        this.cityId = cityId;
 
     }
 
     @When("we are requesting weather data")
-    public void request_weather() {
+    public void request_weather() throws JsonProcessingException {
+        // call Weather Requester
+        WeatherRequester requester = new WeatherRequester();
+        requester.getWeather(cityId);
 
     }
     @Then("lon is {double}")
     public void check_lon(double lon) {
+        Assertions.assertEquals(lon, response.getCoord().getLon(), "Wrong lon");
 
     }
     @Then("lat is {double}")
     public void check_lat(double lat) {
 
     }
-    @And("weather id is {int}")
+    @Then("weather id is {int}")
     public void check_id(int id) {
 
     }
-    @And("weather main is {String}")
+    @And("weather main is {string}")
     public void check_weather_main(String main) {
 
     }
-    @And("description is {String}")
+    @Then("description is {string}")
     public void check_despription(String description) {
 
     }
-    @And("icon is {String}")
+    @And("icon is {string}")
     public void check_icon(String icon) {
 
     }
-    @And("base is {String}")
+    @And("base is {string}")
     public void check_base(String main) {
 
     }
+
+    @Then("main data is:")
+    public void check_main_data(Map<String, String> params) {
+
+    }
+
+
     @And("temp is {double}")
     public void check_temp(double temp) {
 
@@ -103,8 +123,8 @@ public class WeatherStepDefs {
     public void check_message(double message) {
 
     }
-    @And("country is {String}")
-    public void check_country(int country) {
+    @And("country is {string}")
+    public void check_country(String country) {
 
     }
     @And("sunrise is {int}")
@@ -120,7 +140,7 @@ public class WeatherStepDefs {
 
     }
 
-    @And("name is {String}")
+    @And("name is {string}")
     public void check_name(String name) {
 
     }

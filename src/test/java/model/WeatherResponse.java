@@ -1,37 +1,28 @@
 package model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import sun.applet.Main;
 
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherResponse {
     private Coord coord;
 
-    @JsonProperty("weather") //privjazka k Json ( razreshenie weather v Json nazivatsja weathers !!!)
+    @JsonProperty("weather") //privjazka k Json ( razreshenie weather v Json nazivatsja weathers )
     private List<Weather> weathers; //tak kak spisok, to nado ne weather, a wheatherS!!  potomu dobavljaetsja verhnjaa stroka!
 
     private String base;
-
     private Main main;
-
     private double visibility;
-
     private Wind wind;
-
     private Clouds clouds;
-
     private int dt;
-
     private Sys sys;
-
     private int id;
-
     private String name;
-
     private int cod;
-
-
 
 
 
