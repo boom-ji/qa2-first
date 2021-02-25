@@ -27,7 +27,7 @@ public class HomePage {
     }
 
     public String getArticleById(int id) {
-        Logger.info("Getting article Nr." + id + " title");
+//        Logger.info("Getting article Nr." + id + " title");
 
         return baseFunc.getText(TITLE, id);
     }

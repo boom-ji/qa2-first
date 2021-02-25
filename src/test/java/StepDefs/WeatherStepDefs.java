@@ -27,7 +27,7 @@ public class WeatherStepDefs {
     public void request_weather() throws JsonProcessingException {
         // call Weather Requester
         WeatherRequester requester = new WeatherRequester();
-        requester.getWeather(cityId);
+        response = requester.getWeather(cityId);
 
     }
     @Then("lon is {double}")
